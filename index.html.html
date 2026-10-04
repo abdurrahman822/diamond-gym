@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Diamond Gym – Maplewood, NJ | Home to the Hardcore</title>
+<meta name="description" content="Diamond Gym in Maplewood, NJ. 50+ years of bodybuilding history, 10,000+ lbs of free weights, open 365 days. No contracts, no sign-up fee.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0b0d;--steel:#15181c;--line:#2a2f36;--chalk:#eeede8;--mute:#9a9ea5;--ice:#8fe3ff;--ice2:#4cc3ee;
+--d:"Barlow Condensed",Impact,sans-serif;--b:"Barlow",system-ui,sans-serif;box-sizing:border-box;
+padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);background:var(--ink)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--ink);color:var(--chalk);font:400 1.05rem/1.6 var(--b);overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+h1,h2,h3{font-family:var(--d);text-transform:uppercase;margin:0;line-height:.92;letter-spacing:.01em}
+h2{font-size:clamp(2.6rem,8vw,5.5rem);font-weight:800;margin-bottom:2rem}
+h3{font-size:1.9rem;font-weight:700}
+section{padding:clamp(4.5rem,11vw,9rem) clamp(1.2rem,5vw,4rem)}
+.wrap{max-width:1200px;margin:auto}
+.muted{color:var(--mute)}
+
+/* header */
+.bar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;
+padding:calc(.8rem + env(safe-area-inset-top,0px)) clamp(1.2rem,5vw,4rem) .8rem;background:linear-gradient(var(--ink),transparent)}
+.logo{display:flex;gap:.55rem;align-items:center;text-decoration:none;font:800 1.35rem var(--d);letter-spacing:.06em;text-transform:uppercase}
+.logo svg{width:22px;height:22px}
+.bar nav{display:flex;gap:1.6rem;align-items:center;font-weight:500}
+.bar nav a{text-decoration:none;font-size:.95rem}
+.bar nav a.hide-m{display:inline}
+.btn{display:inline-block;padding:.85rem 1.6rem;background:var(--ice);color:var(--ink);font:700 1.15rem var(--d);letter-spacing:.06em;
+text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s}
+.btn:hover{background:#fff}.btn:active{transform:scale(.97)}
+.btn.ghost{background:transparent;color:var(--chalk);border:1.5px solid var(--line)}
+.btn.ghost:hover{border-color:var(--ice);background:transparent}
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:100;background:var(--ink);display:grid;place-items:center;align-content:center;gap:1rem}
+#intro svg{width:84px;height:84px}
+#intro b{font:800 1.6rem var(--d);letter-spacing:.3em;text-transform:uppercase}
+
+/* hero */
+.hero{min-height:100svh;display:grid;align-content:end;padding-bottom:clamp(3rem,8vw,6rem);position:relative;overflow:hidden;
+background:radial-gradient(60% 50% at 75% 30%,rgba(143,227,255,.16),transparent 70%),
+repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,255,255,.025) 46px 47px),var(--ink)}
+.hero .gem{position:absolute;right:-8vw;top:12vh;width:min(60vw,560px);opacity:.22;color:var(--ice)}
+h1{font-size:clamp(4rem,17vw,13rem);font-weight:800;position:relative}
+h1 span{display:block;overflow:hidden}
+h1 span i{display:block;font-style:normal}
+.hero p{max-width:34rem;margin:1.6rem 0 2rem;color:var(--mute);font-size:1.15rem}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap}
+
+/* ticker */
+.tick{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:1rem 0;font:700 1.5rem var(--d);text-transform:uppercase;letter-spacing:.08em}
+.tick div{display:inline-block;animation:slide 28s linear infinite;padding-left:100%}
+.tick span{margin-right:2.5rem}.tick span::after{content:"◆";margin-left:2.5rem;color:var(--ice)}
+@keyframes slide{to{transform:translateX(-100%)}}
+
+/* why */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--ink);padding:2rem 1.5rem}
+.stat b{display:block;font:800 clamp(3.5rem,8vw,5.5rem)/1 var(--d);color:var(--ice)}
+.stat span{color:var(--mute)}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:1rem}
+.plan{background:var(--steel);border:1px solid var(--line);padding:1.8rem 1.4rem;display:flex;flex-direction:column;gap:.4rem;transition:transform .3s,border-color .3s}
+.plan:hover{transform:translateY(-6px);border-color:var(--ice)}
+.plan .p{font:800 3.4rem/1 var(--d)}
+.plan small{color:var(--mute)}
+.plan .btn{margin-top:auto;text-align:center}
+.plan.best{border-color:var(--ice);background:linear-gradient(160deg,#10222b,var(--steel))}
+.tag{font:700 .9rem var(--d);letter-spacing:.1em;color:var(--ice);text-transform:uppercase}
+.note{margin-top:1.5rem;color:var(--mute);font-size:.95rem}
+
+/* tour */
+.tour{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:1rem}
+.shot{position:relative;aspect-ratio:4/5;display:flex;align-items:flex-end;padding:1.2rem;clip-path:inset(0);overflow:hidden}
+.shot::before{content:"";position:absolute;inset:0;background:var(--g);transition:transform 1.2s}
+.shot:hover::before{transform:scale(1.06)}
+.shot div{position:relative}
+.s1{--g:linear-gradient(200deg,#39424b,#14171b 70%)}
+.s2{--g:linear-gradient(200deg,#1d4455,#0e1417 70%)}
+.s3{--g:linear-gradient(200deg,#4b4137,#15130f 70%)}
+.shot p{margin:.3rem 0 0;color:var(--mute);font-size:.95rem}
+
+/* training */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:3rem}
+ul.l{list-style:none;padding:0;margin:1rem 0 0}
+ul.l li{padding:.7rem 0;border-bottom:1px solid var(--line)}
+
+/* contact */
+.hours{width:100%;border-collapse:collapse;margin:1rem 0 2rem}
+.hours td{padding:.7rem 0;border-bottom:1px solid var(--line)}.hours td:last-child{text-align:right}
+form{display:grid;gap:.8rem}
+label{font-size:.9rem;color:var(--mute)}
+input,textarea{width:100%;background:var(--steel);border:1px solid var(--line);color:var(--chalk);padding:.85rem;font:inherit}
+input:focus,textarea:focus{outline:2px solid var(--ice);border-color:var(--ice)}
+footer{border-top:1px solid var(--line);padding:2rem clamp(1.2rem,5vw,4rem) calc(2rem + env(safe-area-inset-bottom,0px));color:var(--mute);font-size:.9rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+
+/* mobile join bar */
+.join{display:none}
+@media(max-width:700px){
+.bar nav a.hide-m{display:none}
+.join{display:block;position:fixed;left:0;right:0;bottom:0;z-index:40;padding:.7rem 1rem calc(.7rem + env(safe-area-inset-bottom,0px));background:rgba(10,11,13,.92);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
+.join .btn{display:block;text-align:center}
+footer{padding-bottom:6rem}
+}
+@media(prefers-reduced-motion:reduce){.tick div{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true">
+  <svg viewBox="0 0 100 100" fill="none" stroke="#8fe3ff" stroke-width="2.5"><path id="dia" d="M50 6 90 38 50 94 10 38ZM10 38H90M32 38 50 6 68 38M32 38 50 94 68 38"/></svg>
+  <b>Diamond Gym</b>
+</div>
+
+<header class="bar">
+  <a class="logo" href="#top"><svg viewBox="0 0 100 100" fill="none" stroke="#8fe3ff" stroke-width="7"><path d="M50 6 90 38 50 94 10 38ZM10 38H90"/></svg>Diamond Gym</a>
+  <nav><a class="hide-m" href="#plans">Memberships</a><a class="hide-m" href="#tour">Tour</a><a class="hide-m" href="#training">Training</a><a class="btn" href="#plans">Join now</a></nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <svg class="gem" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width=".8" aria-hidden="true"><path d="M50 6 90 38 50 94 10 38ZM10 38H90M32 38 50 6 68 38M32 38 50 94 68 38"/></svg>
+  <div class="wrap">
+    <h1><span><i>Home to</i></span><span><i>the hardcore</i></span></h1>
+    <p>Diamond Gym, Maplewood, NJ. Over 50 years of bodybuilding history, open 365 days a year.</p>
+    <div class="cta"><a class="btn" href="#plans">See memberships</a><a class="btn ghost" href="#tour">Take the tour</a></div>
+  </div>
+</section>
+
+<div class="tick" aria-hidden="true"><div><span>No contracts</span><span>No sign-up fee</span><span>No bull</span><span>Open 365 days</span><span>50+ IFBB Pros</span><span>Dumbbells to 210 lbs</span></div></div>
+
+<section id="why"><div class="wrap">
+  <h2>Why train here</h2>
+  <div class="stats">
+    <div class="stat"><b data-n="50" data-s="+">0</b><span>years of bodybuilding and fitness history</span></div>
+    <div class="stat"><b data-n="365">0</b><span>days a year, we are open</span></div>
+    <div class="stat"><b data-n="50" data-s="+">0</b><span>IFBB Pros have trained here</span></div>
+    <div class="stat"><b data-n="10000" data-s="+">0</b><span>lbs of free weights</span></div>
+    <div class="stat"><b data-n="210">0</b><span>lb dumbbells, the top of the rack</span></div>
+    <div class="stat"><b>Top 5</b><span>hardcore gym</span></div>
+  </div>
+</div></section>
+
+<section id="plans"><div class="wrap">
+  <h2>Memberships</h2>
+  <div class="plans">
+    <div class="plan"><span class="tag">Try it</span><h3>1 day</h3><div class="p">$35</div><small>Valid one day from purchase</small><a class="btn ghost" href="#contact" data-plan="1 Day Pass">Get a pass</a></div>
+    <div class="plan"><span class="tag">Monthly</span><h3>1 month</h3><div class="p">$55</div><small>Valid one month from purchase</small><a class="btn ghost" href="#contact" data-plan="1 Month">Join</a></div>
+    <div class="plan"><span class="tag">Save</span><h3>3 months</h3><div class="p">$125</div><small>About $42 a month</small><a class="btn ghost" href="#contact" data-plan="3 Months">Join</a></div>
+    <div class="plan"><span class="tag">Save more</span><h3>6 months</h3><div class="p">$235</div><small>About $39 a month</small><a class="btn ghost" href="#contact" data-plan="6 Months">Join</a></div>
+    <div class="plan best"><span class="tag">Best value</span><h3>1 year</h3><div class="p">$465</div><small>About $39 a month, valid one year</small><a class="btn" href="#contact" data-plan="1 Year">Join</a></div>
+  </div>
+  <p class="note">No contracts. No registration. No sign-up fee. No bull. Prices are before applicable tax. All sales are final.</p>
+</div></section>
+
+<section id="tour"><div class="wrap">
+  <h2>A peek inside</h2>
+  <div class="tour">
+    <div class="shot s1"><div><h3>The iron floor</h3><p>10,000+ lbs of free weights.</p></div></div>
+    <div class="shot s2"><div><h3>Dumbbell racks</h3><p>Up to 210 lbs.</p></div></div>
+    <div class="shot s3"><div><h3>Machines and training area</h3><p>Where the Pros put in the work.</p></div></div>
+  </div>
+  <p class="note">Placeholder panels. Swap in real photos or video of the gym.</p>
+</div></section>
+
+<section id="training"><div class="wrap two">
+  <div>
+    <h2>Training</h2>
+    <p>Work one-on-one or in a group with trainers who compete. More than half of our certified personal trainers have won state or national NPC titles.</p>
+    <ul class="l"><li>Contest prep</li><li>Gaining weight</li><li>Losing body fat</li><li>General fitness</li></ul>
+    <p class="note">Personal training is not included in a membership. Rates vary.</p>
+  </div>
+  <div>
+    <h2>Nutrition</h2>
+    <p>Trainers can help you build your eating plan, and our front desk can help you get started with it.</p>
+    <ul class="l"><li>Protein powders, bars and ready-to-drink shakes</li><li>Energy drinks and fat burners</li><li>Vitamins and amino acids</li></ul>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap two">
+  <div>
+    <h2>Find us</h2>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=732+Irvington+Ave+Maplewood+NJ+07040">732 Irvington Ave<br>Maplewood, NJ 07040</a></p>
+    <p><a href="tel:+19737620828">(973) 762-0828</a><br><a href="mailto:info@diamondgym.pro">info@diamondgym.pro</a></p>
+    <table class="hours"><tr><td>Monday to Friday</td><td>5 AM – 10 PM</td></tr><tr><td>Saturday</td><td>6 AM – 6 PM</td></tr><tr><td>Sunday</td><td>7 AM – 4 PM</td></tr></table>
+  </div>
+  <form id="f">
+    <h2>Say hello</h2>
+    <div><label for="n">Full name</label><input id="n" required autocomplete="name"></div>
+    <div><label for="e">Email</label><input id="e" type="email" required autocomplete="email"></div>
+    <div><label for="t">Phone</label><input id="t" type="tel" autocomplete="tel"></div>
+    <div><label for="m">Message</label><textarea id="m" rows="4" required></textarea></div>
+    <button class="btn" type="submit">Send message</button>
+    <small class="muted">We reply within 24 hours.</small>
+  </form>
+</div></section>
+</main>
+
+<footer><span>© Diamond Gym – Home of the Hardcore</span><span>Open 365 days a year</span></footer>
+<div class="join"><a class="btn" href="#plans">Join now</a></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+(function(){
+var intro=document.getElementById('intro');
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var ok=window.gsap&&window.ScrollTrigger&&window.Lenis;
+var lenis=null;
+function done(){intro.style.display='none'}
+
+// forms: no backend, so open the visitor's email app
+document.getElementById('f').addEventListener('submit',function(e){
+  e.preventDefault();
+  var g=function(i){return document.getElementById(i).value};
+  var body='Name: '+g('n')+'\nEmail: '+g('e')+'\nPhone: '+g('t')+'\n\n'+g('m');
+  location.href='mailto:info@diamondgym.pro?subject='+encodeURIComponent('Website message from '+g('n'))+'&body='+encodeURIComponent(body);
+});
+document.querySelectorAll('[data-plan]').forEach(function(a){
+  a.addEventListener('click',function(){var m=document.getElementById('m');if(!m.value)m.value='I would like to join: '+a.dataset.plan+'.'});
+});
+
+// counters
+function count(el){
+  var n=+el.dataset.n,s=el.dataset.s||'';
+  if(!ok||reduce){el.textContent=n.toLocaleString()+s;return}
+  var o={v:0};
+  gsap.to(o,{v:n,duration:1.8,ease:'power2.out',onUpdate:function(){el.textContent=Math.round(o.v).toLocaleString()+s},
+    scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+}
+document.querySelectorAll('[data-n]').forEach(count);
+
+if(!ok||reduce){done();return}
+
+gsap.registerPlugin(ScrollTrigger);
+lenis=new Lenis({lerp:.09});
+lenis.stop();
+lenis.on('scroll',ScrollTrigger.update);
+gsap.ticker.add(function(t){lenis.raf(t*1000)});
+gsap.ticker.lagSmoothing(0);
+document.querySelectorAll('a[href^="#"]').forEach(function(a){
+  a.addEventListener('click',function(e){var id=a.getAttribute('href');if(id.length>1){e.preventDefault();lenis.scrollTo(id,{offset:-10})}});
+});
+
+// the one orchestrated moment: diamond draws, curtain lifts, headline rises
+var d=document.getElementById('dia'),L=d.getTotalLength();
+gsap.set(d,{strokeDasharray:L,strokeDashoffset:L});
+gsap.set('h1 i',{yPercent:110});
+gsap.set(['.hero p','.hero .cta'],{opacity:0,y:20});
+gsap.timeline({defaults:{ease:'power3.out'}})
+  .to(d,{strokeDashoffset:0,duration:1.1,ease:'power2.inOut'})
+  .to('#intro b',{opacity:1,duration:.3},'<.5')
+  .to(intro,{yPercent:-100,duration:.9,ease:'power4.inOut',delay:.25,onComplete:function(){done();lenis.start()}})
+  .to('h1 i',{yPercent:0,duration:1.1,stagger:.12},'-=.35')
+  .to(['.hero p','.hero .cta'],{opacity:1,y:0,duration:.8,stagger:.1},'-=.6');
+gsap.set('#intro b',{opacity:0});
+
+// scroll reveals: only the tour panels and plan cards
+gsap.utils.toArray('.shot').forEach(function(el){
+  gsap.fromTo(el,{clipPath:'inset(0 0 100% 0)'},{clipPath:'inset(0 0 0% 0)',duration:1.2,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 85%'}});
+});
+gsap.from('.plan',{y:40,opacity:0,duration:.8,stagger:.08,ease:'power3.out',scrollTrigger:{trigger:'.plans',start:'top 85%'}});
+})();
+</script>
+</body>
+</html>
